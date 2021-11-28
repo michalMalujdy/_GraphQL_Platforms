@@ -62,6 +62,7 @@ namespace GraphqlDemo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGraphQL();
+                endpoints.MapGet("/", async http => { http.Response.Redirect("/graphql"); });
             });
 
             app.UseGraphQLVoyager(new GraphQLVoyagerOptions
